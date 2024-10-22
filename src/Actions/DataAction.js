@@ -1,7 +1,6 @@
 import axios from "axios";
 import Card from "../components/Card/Card";
 
-// Define action types as constants
 const DATA_REQUEST = "DATA_REQUEST";
 const DATA_SUCCESS = "DATA_SUCCESS";
 const DATA_FAILURE = "DATA_FAILURE";

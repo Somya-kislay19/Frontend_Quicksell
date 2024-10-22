@@ -1,18 +1,30 @@
 import { React } from "react";
 import { useSelector } from "react-redux";
-import { AiOutlinePlus } from "react-icons/ai";
-import { FaRegCircle } from "react-icons/fa6";
-import { MdCancel } from "react-icons/md";
-import { IoMdCloseCircleOutline } from "react-icons/io";
-import { BiAdjust, BiLoader } from "react-icons/bi";
 import { DiCodeigniter } from "react-icons/di";
-import {
-  BsCheckCircleFill,
-  BsFillExclamationSquareFill,
-  BsFillCheckCircleFill,
-} from "react-icons/bs";
+
 import "./DashBoard.css";
 import Card from "../Card/Card";
+import TodoIcon from "../Assests/To-do.svg";
+import Bl from "../Assests/SVG - Urgent Priority grey.svg";
+import Bll from "../Assests/SVG - Urgent Priority colour.svg";
+
+import IP from "../Assests/in-progress.svg";
+import Done from "../Assests/Done.svg";
+import C from "../Assests/Cancelled.svg";
+import A from "../Assests/add.svg";
+import Cancel from "../Assests/Cancelled.svg";
+import Dot from "../Assests/3 dot menu.svg";
+import NP from "../Assests/No-priority.svg";
+
+
+
+
+
+
+
+
+
+
 
 const DashBoard = () => {
   const isStatus = localStorage.getItem("group") === "status";
@@ -60,19 +72,17 @@ const DashBoard = () => {
                       }}
                     >
                       {element[index].title === "Backlog" ? (
-                        <BiLoader style={{ fontSize: "13px" }} />
+                        <img src={Bl} alt="bl" style={{ width: "14px", height: "14px" }} />
+
                       ) : element[index].title === "Todo" ? (
-                        <FaRegCircle
-                          style={{ fontSize: "13px", color: "#ddeded" }}
-                        />
+                        <img src={TodoIcon} alt="Todo Icon" style={{ width: "14px", height: "14px" }} />
                       ) : element[index].title === "In progress" ? (
-                        <BiAdjust
-                          style={{ fontSize: "13px", color: "#f2d750" }}
-                        />
+                        <img src={IP} alt="ip" style={{ width: "14px", height: "14px" }} />
+                        
                       ) : element[index].title === "Done" ? (
-                        <BsCheckCircleFill />
+                        <img src={Done} alt="d" style={{ width: "14px", height: "14px" }} />
                       ) : (
-                        <IoMdCloseCircleOutline />
+                        <img src={C} alt="c" style={{ width: "14px", height: "14px" }} />
                       )}
                     </div>
                   ) : isPriority ? (
@@ -119,15 +129,12 @@ const DashBoard = () => {
                           />
                         </svg>
                       ) : element[index].title === "Urgent" ? (
-                        // This icon color is now orange
-                        <BsFillExclamationSquareFill
-                          style={{ color: "orange" }}
-                        />
+                        <img src={Bll} alt="u" style={{ width: "14px", height: "14px" }} />
+                       
                       ) : (
                         <div className="noPriority">
-                          <AiOutlinePlus
-                            style={{ fontSize: "13px", marginRight: "5px", color: "black" }}
-                          />
+                        <img src={NP} alt="u" style={{ width: "14px", height: "14px" }} />
+                         
                         </div>
                       )}
                     </div>
@@ -139,7 +146,8 @@ const DashBoard = () => {
                   </span>
                 </div>
                 <div className="rightView">
-                  <AiOutlinePlus />{" "}
+                <img src={A} alt="u" style={{ width: "14px", height: "14px" }} />
+                {" "}
                   <span style={{ letterSpacing: "2px" }}>...</span>
                 </div>
               </div>
@@ -179,8 +187,8 @@ const DashBoard = () => {
                     fontWeight: 200,
                   }}
                 >
-                  <BsFillCheckCircleFill style={{ color: "blue" }} />
-                </div>{" "}
+                        <img src={Done} alt="d" style={{ width: "14px", height: "14px" }} />
+                        </div>{" "}
                 <span
                   style={{ fontSize: "13px", fontWeight: "lighter" }}
                 >
@@ -189,7 +197,8 @@ const DashBoard = () => {
                 <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
               </div>
               <div className="rightView">
-                <AiOutlinePlus />{" "}
+              <img src={A} alt="u" style={{ width: "14px", height: "14px" }} />
+                {" "}
                 <span style={{ letterSpacing: "2px" }}>...</span>
               </div>
             </div>
@@ -211,8 +220,8 @@ const DashBoard = () => {
                     fontWeight: 200,
                   }}
                 >
-                  <MdCancel style={{ color: "grey" }} />
-                </div>{" "}
+              <img src={Cancel} alt="u" style={{ width: "14px", height: "14px" }} />
+              </div>{" "}
                 <span
                   style={{ fontSize: "13px", fontWeight: "lighter" }}
                 >
@@ -221,8 +230,9 @@ const DashBoard = () => {
                 <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
               </div>
               <div className="rightView">
-                <AiOutlinePlus />{" "}
-                <span style={{ letterSpacing: "2px" }}>...</span>
+              <img src={A} alt="u" style={{ width: "14px", height: "14px" }} />
+              {" "}
+              <img src={Dot} alt="Todo Icon" style={{ width: "14px", height: "14px" }} />
               </div>
             </div>
           </>
