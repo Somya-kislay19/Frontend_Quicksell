@@ -40,12 +40,10 @@
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
-    /* Allow tags to wrap to the next line on smaller screens */
 }
 
 @media only screen and (max-width: 600px) {
     .cardContainer {
         padding: 5%;
-        /* Adjusted padding for larger screens */
     }
 }
