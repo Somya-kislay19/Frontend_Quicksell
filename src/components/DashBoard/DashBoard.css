@@ -36,14 +36,14 @@
 @media screen and (max-width: 768px) {
   .dashCardContainer {
     width: 45%;
-    /* Adjust the width based on your design */
+   
   }
 }
 
 @media screen and (max-width: 480px) {
   .dashCardContainer {
     width: 100%;
-    /* Full width on smaller screens */
+   
   }
 
   .dashCardHeading {
